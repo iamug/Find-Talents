@@ -27,12 +27,12 @@ const TopNav = () => {
         >
           <ul className="navbar-nav mb-2 mb-md-0">
             <li className="nav-item">
-              <NavLink className="nav-link mx-2 h5" activeClassName="active" to="/home" exact>
+              <NavLink className="nav-link mx-2 h5" activeClassName="active" to="./home" exact>
                 Home
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link mx-2 h5" activeClassName="active" to="/saved" exact>
+              <NavLink className="nav-link mx-2 h5" activeClassName="active" to="./saved" exact>
                 Saved
               </NavLink>
             </li>
