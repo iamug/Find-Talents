@@ -7,8 +7,7 @@ import "./App.css";
 import { Home, Saved } from "./pages";
 
 function App(props: any) {
-  const { match } = props;
-  console.log({ props });
+  const { location } = props;
 
   return (
     <ErrorBoundary>
@@ -17,8 +16,8 @@ function App(props: any) {
           <Switch>
             <Layout>
               <Switch>
-                <Route path={`${props.match.path}/home`} exact component={Home} />
-                <Route path={`${match.path}/saved`} exact component={Saved} />
+                <Route path={`${props.location.pathname}/home`} exact component={Home} />
+                <Route path={`${props.location.pathname}/saved`} exact component={Saved} />
                 <Route component={Home} />
               </Switch>
             </Layout>
