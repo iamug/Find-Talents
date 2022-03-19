@@ -1,7 +1,7 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, withRouter } from "react-router-dom";
 
-const TopNav = () => {
+const TopNav = (props: any) => {
   // const history = useHistory();
   return (
     <nav className="navbar navbar-expand-lg navbar-primary sticky-top px-0 shadow-lg">
@@ -27,12 +27,12 @@ const TopNav = () => {
         >
           <ul className="navbar-nav mb-2 mb-md-0">
             <li className="nav-item">
-              <NavLink className="nav-link mx-2 h5" activeClassName="active" to="./home" exact>
+              <NavLink className="nav-link mx-2 h5" activeClassName="active" to={`${props.match.url}/homd`} exact>
                 Home
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link mx-2 h5" activeClassName="active" to="./saved" exact>
+              <NavLink className="nav-link mx-2 h5" activeClassName="active" to={`${props.match.url}/saved`} exact>
                 Saved
               </NavLink>
             </li>
@@ -43,4 +43,4 @@ const TopNav = () => {
   );
 };
 
-export default TopNav;
+export default withRouter(TopNav);
