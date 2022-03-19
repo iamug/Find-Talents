@@ -6,7 +6,9 @@ import "./App.css";
 
 import { Home, Saved } from "./pages";
 
-function App() {
+function App(this: any) {
+  const { match } = this.props as any;
+
   return (
     <ErrorBoundary>
       <Suspense fallback={<Loading />}>
@@ -14,8 +16,8 @@ function App() {
           <Switch>
             <Layout>
               <Switch>
-                <Route path="./home" exact component={Home} />
-                <Route path="./saved" exact component={Saved} />
+                <Route path={`${this.props.match.path}/home`} exact component={Home} />
+                <Route path={`${match.path}/saved`} exact component={Saved} />
                 <Route component={Home} />
               </Switch>
             </Layout>
