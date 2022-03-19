@@ -3,7 +3,7 @@ import { NavLink, withRouter } from "react-router-dom";
 
 const TopNav = (props: any) => {
   // const history = useHistory();
-  // console.log({ props2: props });
+  console.log({ props2: props });
   return (
     <nav className="navbar navbar-expand-lg navbar-primary sticky-top px-0 shadow-lg">
       <div className="container px-3">
@@ -28,12 +28,12 @@ const TopNav = (props: any) => {
         >
           <ul className="navbar-nav mb-2 mb-md-0">
             <li className="nav-item">
-              <NavLink className="nav-link mx-2 h5" activeClassName="active" to="./home" exact>
+              <NavLink className="nav-link mx-2 h5" activeClassName="active" to={`${props.match.path}home`} exact>
                 Home
               </NavLink>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link mx-2 h5" activeClassName="active" to="./saved" exact>
+              <NavLink className="nav-link mx-2 h5" activeClassName="active" to={`${props.match.path}saved`} exact>
                 Saved
               </NavLink>
             </li>
