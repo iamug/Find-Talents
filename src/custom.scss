@@ -1,0 +1,56 @@
+// Override default variables before the import
+
+@import "../node_modules/bootstrap/scss/functions";
+
+@import "../node_modules/bootstrap/scss/mixins";
+
+$primary: #0f4e71;
+$secondary: #d2d2d2;
+@import "../node_modules/bootstrap/scss/variables";
+//@import "../node_modules/bootstrap/scss/mixins";
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "warning": $warning,
+  "danger": $danger,
+  "light": $light,
+  "dark": $dark,
+  "black": #000000,
+);
+
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * 0.25,
+  2: $spacer * 0.5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+  6: $spacer * 4,
+  7: $spacer * 5,
+  8: $spacer * 6,
+);
+
+$border-radius: 0.6rem;
+$border-radius-sm: 0.3rem;
+$border-radius-lg: 0.9rem;
+
+$custom-colors: (
+  "primaryLight": tint-color($primary, 80%),
+  "primary-60": tint-color($primary, 60%),
+  "primary-40": tint-color($primary, 40%),
+  "primary-20": tint-color($primary, 20%),
+  "primary-10": tint-color($primary, 10%),
+  "black": #000000,
+  "gray": #b9b9b9,
+  "lightgray": $gray-400,
+  "primaryContrast": color-contrast(#ffffff),
+);
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+// Import Bootstrap and its default variables
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
