@@ -3,6 +3,7 @@ import { NavLink, withRouter } from "react-router-dom";
 
 const TopNav = (props: any) => {
   // const history = useHistory();
+  console.log({ props2: props });
   return (
     <nav className="navbar navbar-expand-lg navbar-primary sticky-top px-0 shadow-lg">
       <div className="container px-3">

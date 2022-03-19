@@ -8,6 +8,7 @@ import { Home, Saved } from "./pages";
 
 function App(props: any) {
   const { match } = props;
+  console.log({ props });
 
   return (
     <ErrorBoundary>
