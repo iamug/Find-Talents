@@ -1,13 +1,13 @@
 import React, { Suspense } from "react";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, withRouter } from "react-router-dom";
 import { ErrorBoundary, Layout } from "./components";
 import { Loading } from "./components/Loading";
 import "./App.css";
 
 import { Home, Saved } from "./pages";
 
-function App(this: any) {
-  const { match } = this.props as any;
+function App(props: any) {
+  const { match } = props;
 
   return (
     <ErrorBoundary>
@@ -16,7 +16,7 @@ function App(this: any) {
           <Switch>
             <Layout>
               <Switch>
-                <Route path={`${this.props.match.path}/home`} exact component={Home} />
+                <Route path={`${props.match.path}/home`} exact component={Home} />
                 <Route path={`${match.path}/saved`} exact component={Saved} />
                 <Route component={Home} />
               </Switch>
@@ -28,4 +28,4 @@ function App(this: any) {
   );
 }
 
-export default App;
+export default withRouter(App);

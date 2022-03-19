@@ -29,7 +29,11 @@ export const Pagination = ({ data, page, limit, setPage }: IPaginationProps) => 
             </>
           )}
           {Array.from(Array(TOTAL_PAGES || 0).keys()).map((index) => (
-            <BPagination.Item onClick={() => setPage(+index + 1)} active={+index + 1 === page}>
+            <BPagination.Item
+              key={Math.floor(Math.random() * (90000 + +index)) + 10000}
+              onClick={() => setPage(+index + 1)}
+              active={+index + 1 === page}
+            >
               {index + 1}
             </BPagination.Item>
           ))}
