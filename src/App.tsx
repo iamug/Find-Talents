@@ -16,8 +16,8 @@ function App(props: any) {
           <Switch>
             <Layout>
               <Switch>
-                <Route path={`${props.match.url}home`} exact component={Home} />
-                <Route path={`${props.match.url}saved`} exact component={Saved} />
+                <Route path="home" exact component={Home} />
+                <Route path="saved" exact component={Saved} />
                 <Route component={Home} />
               </Switch>
             </Layout>
