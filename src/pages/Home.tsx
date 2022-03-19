@@ -64,7 +64,7 @@ const Home = () => {
 
   return (
     <>
-      <div className="row pt-3 pt-lg-5">
+      <div className="row px-3 px-lg-0 pt-3 pt-lg-5">
         <div className="text-center"></div>
 
         <Formik validateOnChange={true} initialValues={initialState} onSubmit={(data) => search(data)}>
@@ -81,17 +81,15 @@ const Home = () => {
                   <Form.Group className="col-lg-2 pt-1 ">
                     <TextInput name="country" disableValidation={true} />
                   </Form.Group>
-                  <div className="col-2 text-right d-flex">
-                    <button type="submit" className="btn btn-outline-primary w-100">
+                  <div className="col-12 col-lg-2 text-right d-flex">
+                    <button type="submit" className="btn btn-outline-primary mt-3 mt-lg-0 w-100">
                       Search
                     </button>
                     {searchState && (
                       <button
                         type="button"
-                        onClick={() => {
-                          handleResetForm(resetForm);
-                        }}
-                        className="btn btn-outline-danger  mx-2"
+                        onClick={() => handleResetForm(resetForm)}
+                        className="btn btn-outline-danger mt-3 mt-lg-0  mx-2"
                       >
                         <i className="fas fa-times" />
                       </button>
@@ -122,9 +120,7 @@ const Home = () => {
         <>
           <div className="my-5 py-5">
             <div className="col-12 text-center">
-              <h2 className="fw-light">
-                Error {searchState ? " Error Searching For Talents" : "Error Fetching Talents"} Vitals.
-              </h2>
+              <h2 className="fw-light">{searchState ? " Error Searching For Talents" : "Error Fetching Talents"} Vitals.</h2>
             </div>
           </div>
         </>
@@ -134,7 +130,6 @@ const Home = () => {
         <>
           <div className="my-5 py-5">
             <div className="col-12 text-center">
-              {/* <h2 className="fw-light"> No Talents</h2> */}
               <h2 className="fw-light"> {searchState ? "No Search Results." : "No Talents."}</h2>
             </div>
           </div>
@@ -158,7 +153,7 @@ const Home = () => {
           )}
           {!searchLoading && !isLoading && (
             <>
-              <div className="row row-cols-1 row-cols-sm-1 row-cols-md-3 align-items-stretch row-cols-xl-4 g-4 mt-2 px-lg-3">
+              <div className="row row-cols-1 row-cols-sm-1 row-cols-md-3 align-items-stretch row-cols-xl-4 g-4 mt-2 px-3 px-lg-3">
                 {talents?.map((value) => (
                   <div key={value?.uuid} className="col">
                     <ProfileCard data={value} onClickSave={saveTalent} disableRemoveSaved={true} />
